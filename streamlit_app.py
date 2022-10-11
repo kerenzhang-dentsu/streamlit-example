@@ -76,3 +76,16 @@ def prep_data(df,date_col,metric_col):
 def mape(actual, pred):
     actual, pred = np.array(actual), np.array(pred)
     return np.mean(np.abs(actual - pred) / actual)
+
+# Page Info - Causal Impact Analysis
+#st.sidebar.image(load_image('Clearchoice_logo.png'), use_column_width=True)
+tabs = ["Causal Impact Analysis", "Scenario Planner"]
+page = st.sidebar.radio("Applications", tabs)
+
+
+
+
+
+
+
+
