@@ -42,8 +42,8 @@ In the meantime, below is an example of what you can do with just a few lines of
 #         .mark_circle(color='#0068c9', opacity=0.5)
 #         .encode(x='x:Q', y='y:Q'))
 # Page Config
-st.set_page_config(page_title="Demo",
-                   layout="wide")
+# st.set_page_config(page_title="Demo",
+#                    layout="wide")
 
 # Data Config
 @st.cache(persist=False,
