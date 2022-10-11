@@ -56,8 +56,15 @@ if page == "Lark":
                 cut the modeling process by over 90%.  
                 """)
 
-
-
+    st.subheader('1. Data Loading')
+    with st.container():
+        st.write("Pick a dataset.")
+        with st.expander("Data Source"):
+            dataset_name = st.selectbox('Select a dataset',
+                                        options=['Data Source Name', 'BOA Demo'])
+            df = pd.read_csv("/Users/kzhang10/Desktop/Github/streamlit-example/BofA_Merill_Edge_Unit_and_Performance_Data_09092022.csv")
+            if dataset_name == 'BOA Demo':      
+                df
 
 
 
