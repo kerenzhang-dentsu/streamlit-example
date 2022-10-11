@@ -36,3 +36,38 @@ In the meantime, below is an example of what you can do with just a few lines of
 #     st.altair_chart(alt.Chart(pd.DataFrame(data), height=500, width=500)
 #         .mark_circle(color='#0068c9', opacity=0.5)
 #         .encode(x='x:Q', y='y:Q'))
+# Page Config
+st.set_page_config(page_title="Demo",
+                   layout="wide")
+
+# Data Config
+@st.cache(persist=False,
+          allow_output_mutation=True,
+          suppress_st_warning=True,
+          show_spinner=True)
+
+def get_project_root():
+    return str(Path(__file__).parent)
+
+def load_image(name):
+    return Image.open(Path(get_project_root()) / f"{name}")
+
+def load_csv():
+    df_input = pd.DataFrame()
+    df_input = pd.read_csv(input,
+                           sep=None,
+                           engine='python',
+                           encoding='utf-8',
+                           parse_dates=True,
+                           infer_datetime_format=True)
+    return df_input
+
+def prep_data(df):
+    df_input = df.rename({date_col:"ds", metric_col:"y"}, errors='raise', axis=1)
+    df_input = df_input[['ds', 'y']]
+    df_input = df_input.sort_values(by='ds', ascending=True)
+    return df_input
+
+def mape(actual, pred):
+    actual, pred = np.array(actual), np.array(pred)
+    return np.mean(np.abs(actual - pred) / actual)
