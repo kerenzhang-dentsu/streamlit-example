@@ -66,7 +66,8 @@ if page == "Lark":
             df = pd.read_csv("BofA_Merill_Edge_Unit_and_Performance_Data_09092022.csv")
             if dataset_name == 'BOA Demo':      
                 df
-                columns = list(df.columns)
+                cols = ['Clicks', 'Cost', 'Impressions', 'Accounts_opened', 'Funded_units']
+                columns = cols
                 col1,col2 = st.columns(2)
                 with col1:
                     date_col = st.selectbox("Select Data Column", index=0, options=columns, key="date")
