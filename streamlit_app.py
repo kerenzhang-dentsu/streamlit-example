@@ -3,6 +3,11 @@ import altair as alt
 import math
 import pandas as pd
 import streamlit as st
+from pathlib import Path
+from PIL import Image
+import numpy as np
+
+
 
 """
 # Welcome to Streamlit!
@@ -62,7 +67,7 @@ def load_csv():
                            infer_datetime_format=True)
     return df_input
 
-def prep_data(df):
+def prep_data(df,date_col,metric_col):
     df_input = df.rename({date_col:"ds", metric_col:"y"}, errors='raise', axis=1)
     df_input = df_input[['ds', 'y']]
     df_input = df_input.sort_values(by='ds', ascending=True)
