@@ -79,9 +79,19 @@ def mape(actual, pred):
 
 # Page Info - Causal Impact Analysis
 #st.sidebar.image(load_image('Clearchoice_logo.png'), use_column_width=True)
-tabs = ["Causal Impact Analysis", "Scenario Planner"]
+tabs = ["Lark"]
 page = st.sidebar.radio("Applications", tabs)
 
+if page == "Lark":
+    st.title('Lark')
+    st.markdown("""
+                Lark is a python module that gathered 24 different models 
+                time series models and machine learning models at ones 
+                to make forecast easier. Using Lark, users can save some time 
+                and effort by skip the steps building different frameworks 
+                and structures for different models which potentially 
+                cut the modeling process by over 90%.  
+                """)
 
 
 
