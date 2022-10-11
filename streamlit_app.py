@@ -66,7 +66,7 @@ if page == "Lark":
             df = pd.read_csv("BofA_Merill_Edge_Unit_and_Performance_Data_09092022.csv")
             if dataset_name == 'BOA Demo':      
                 df
-                cols = ['Date','Clicks', 'Cost', 'Impressions', 'Accounts_opened', 'Funded_units']
+                cols = ['Date','Clicks', 'Cost', 'Impressions', 'Accounts_Opened', 'Funded_Units']
                 columns = cols
                 col1,col2 = st.columns(2)
                 with col1:
