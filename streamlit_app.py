@@ -62,10 +62,10 @@ if page == "Lark":
         with st.expander("Data Source"):
             dataset_name = st.selectbox('Select a dataset',
                                         options=['Data Source Name', 'BOA Demo'])
-            df = pd.read_csv("/Users/kzhang10/Desktop/Github/streamlit-example/BofA_Merill_Edge_Unit_and_Performance_Data_09092022.csv")
+            df = pd.read_csv("BofA_Merill_Edge_Unit_and_Performance_Data_09092022.csv")
             if dataset_name == 'BOA Demo':      
                 df
 
 
-
+ 
 
