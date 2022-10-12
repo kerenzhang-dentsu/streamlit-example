@@ -109,4 +109,9 @@ if page == "Lark":
                         )
                 st.plotly_chart(fig, use_container_width=True)
 
- 
+    st.subheader("2. Parameters Configuration")
+    with st.form("config"):
+        with st.container():
+            st.write('In this section you can choose the model you want to use.')
+            with st.expander("Models"):
+                model_list = ['Country Name', 'United States', 'Italy', 'Spain', 'France', 'Germany']
