@@ -153,5 +153,7 @@ if page == "Lark":
                     p_scale = st.select_slider(label = 'P scale', options = p)
                     d_scale = st.select_slider(label = 'D scale', options = d)
                     q_scale = st.select_slider(label = 'Q scale', options = q)
+                else:
+                    st.write('Nothing to show!')
 
         submitted = st.form_submit_button("Submit")
