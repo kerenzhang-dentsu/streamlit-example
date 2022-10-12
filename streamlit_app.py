@@ -175,7 +175,7 @@ if page == "Lark":
                 history = st.selectbox(label = 'Choose whether to include history or not', options = [True, False])
             with st.expander('With cost'):
                 st.write("In this section it is possible to decide whether to use cost as regressor.")
-                with_cost = st.selectbox(lable = 'Choose whether to use cost as a regressor', options = [True, False])
+                with_cost = st.selectbox(label = 'Choose whether to use cost as a regressor', options = [True, False])
         submitted = st.form_submit_button("Submit")
 
 
