@@ -170,6 +170,10 @@ if page == "Lark":
             with st.expander("Forecast days"):
                 st.write("In this section it is possible to select number of days to forecast.")
                 future = st.number_input(label = 'Enter the number of days to forecast')
+            with st.expander('Including history'):
+                st.write("In this section it is possible to include history or not.")
+                history = st.selectbox(label = 'Choose whether to include history or not', options = [True, False])
+        
         submitted = st.form_submit_button("Submit")
 
 
