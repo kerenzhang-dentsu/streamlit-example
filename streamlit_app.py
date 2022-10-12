@@ -114,4 +114,28 @@ if page == "Lark":
         with st.container():
             st.write('In this section you can choose the model you want to use.')
             with st.expander("Models"):
-                model_list = ['Country Name', 'United States', 'Italy', 'Spain', 'France', 'Germany']
+                model_list = [
+                                'Arima', 
+                                'Prophet', 
+                                'Random Forest', 
+                                'Extreme Gradient Boosting', 
+                                'Gradient Boosting', 
+                                'Cat Boost',
+                                'Light Gradient Boosting Machine',
+                                'Extra Trees',
+                                'Ada Boost',
+                                'Ridge Regression',
+                                'Bayesian Ridge Regression',
+                                'Lasso Regression',
+                                'Theil-Sen Regression',
+                                'Least Angle Regression',
+                                'Lasso Least Angle Regression',
+                                'Decision Tree',
+                                'Huber Regressor',
+                                'Random Sample Consensus',
+                                'Orthogonal Matching Pursuit',
+                                'Passive Aggressive Regressor',
+                                'Elastic Net',
+                                'K-Neighbors Regression',
+                                'Support Vector Machine'
+                                ]
