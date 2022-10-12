@@ -205,3 +205,6 @@ if page == "Lark":
                     date_col_cost = st.selectbox("Select Data Column", index=0, options=columns, key="date")
                 with col4:
                     cost_col = st.selectbox("Select Cost Column", index=4, options=columns, key="values")
+    with st.container():
+        st.subheader("3. Forecast")
+        st.write("Fit the model on the data and generate future prediction.")
