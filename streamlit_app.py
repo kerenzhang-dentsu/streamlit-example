@@ -196,11 +196,12 @@ if page == "Lark":
             actualdata_input = st.file_uploader(
                 'Upload a dataframe with future cost and date.'
             )
-            actual_df = pd.read_csv(actualdata_input)
-            actual_df
-            columns = list(actual_df.columns)
-            col3,col4 = st.columns(2)
-            with col3:
-                date_col_cost = st.selectbox("Select Data Column", index=0, options=columns, key="date")
-            with col4:
-                cost_col = st.selectbox("Select Cost Column", index=4, options=columns, key="values")
+            if actualdata_input:
+                actual_df = pd.read_csv(actualdata_input)
+                actual_df
+                columns = list(actual_df.columns)
+                col3,col4 = st.columns(2)
+                with col3:
+                    date_col_cost = st.selectbox("Select Data Column", index=0, options=columns, key="date")
+                with col4:
+                    cost_col = st.selectbox("Select Cost Column", index=4, options=columns, key="values")
