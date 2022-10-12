@@ -177,14 +177,11 @@ if page == "Lark":
         submitted = st.form_submit_button("Submit")
 
 
-#     if submitted:
-#         st.markdown(f"""Model Configuration: \n
-# Horizon: {periods_input} days \n
-# Seasonality: {seasonality} \n
-# Trend Components: {daily};{weekly};{monthly};{yearly} \n
-# Growth: {growth} \n
-# Holidays: {selected_country} \n
-# Hyperparameters: changepoints {changepoint_scale}, seasonality {seasonality_scale}
-# """)
-#         st.success("Configuration Submitted")
-#         st.write(df.head())
+    if submitted:
+        st.markdown(f"""Model Configuration: \n
+Model: {selected_model} \n
+Pamaters: Checked! \n
+Forecast days: {future} \n
+Including history: {history} \n
+""")
+        st.success("Configuration Submitted")
