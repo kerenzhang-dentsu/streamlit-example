@@ -154,9 +154,9 @@ if page == "Lark":
                     d_scale = st.select_slider(label = 'D scale', options = d)
                     q_scale = st.select_slider(label = 'Q scale', options = q)
                 elif selected_model == 'Prophet':
-                    weekly_seasonality = [*range(1,52,1)]
-                    yearly_seasonality = [*range(1,365,1)]
-                    seasonality_prior_scale = np.arange(0.0,10.0,0.1)
+                    weekly_seasonality = [*range(1,53,1)]
+                    yearly_seasonality = [*range(1,366,1)]
+                    seasonality_prior_scale = np.arange(0.0,11.0,0.1)
                     changepoint_range = [*range(1,10,1)]
                     weekly_scale = st.select_slider(label = 'Weekly seasonality scale', options = weekly_seasonality)
                     yearly_scale = st.select_slider(label = 'Yearly seasonality scale', options = yearly_seasonality)
@@ -173,15 +173,34 @@ if page == "Lark":
             with st.expander('Including history'):
                 st.write("In this section it is possible to include history or not.")
                 history = st.selectbox(label = 'Choose whether to include history or not', options = [True, False])
-        
+            with st.expander('With cost'):
+                st.write("In this section it is possible to decide whether to use cost as regressor.")
+                with_cost = st.selectbox(lable = 'Choose whether to use cost as a regressor', options = [True, False])
         submitted = st.form_submit_button("Submit")
 
 
     if submitted:
-        st.markdown(f"""Model Configuration: \n
-Model: {selected_model} \n
-Pamaters: Checked! \n
-Forecast days: {future} \n
-Including history: {history} \n
-""")
+        st.markdown(f"""
+                    Model Configuration: \n
+                    Model: {selected_model} \n
+                    Pamaters: Valid! \n
+                    Forecast days: {future} \n
+                    Including history: {history} \n
+                    With cost: {with_cost} \n
+                    """)
         st.success("Configuration Submitted")
+
+    if with_cost:
+        st.write("Below you can upload a dataframe with future cost.")
+        with st.expander("Future cost"):
+            actualdata_input = st.file_uploader(
+                'Upload a dataframe with future cost and date.'
+            )
+            actual_df = pd.read_csv(actualdata_input)
+            actual_df
+            columns = list(actual_df.columns)
+            col3,col4 = st.columns(2)
+            with col3:
+                date_col_cost = st.selectbox("Select Data Column", index=0, options=columns, key="date")
+            with col4:
+                cost_col = st.selectbox("Select Cost Column", index=4, options=columns, key="values")
