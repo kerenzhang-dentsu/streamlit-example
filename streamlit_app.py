@@ -8,6 +8,13 @@ from pathlib import Path
 from PIL import Image
 import numpy as np
 import plotly.express as px
+import subprocess
+import sys
+#manually install xlrd and lark because dockerfile cannot install them somehow
+def install(package):
+    subprocess.check_call([sys.executable, "-m", "pip", "install", package])
+
+install('git+https://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@github.com/dentsu-Media-US-Data-Science/Lark.git')
 
 
 # Data Config
@@ -205,6 +212,7 @@ if page == "Lark":
                     date_col_cost = st.selectbox("Select Data Column", index=0, options=columns, key="date")
                 with col4:
                     cost_col = st.selectbox("Select Cost Column", index=4, options=columns, key="values")
+    
     with st.container():
         st.subheader("3. Forecast")
         st.write("Fit the model on the data and generate future prediction.")
