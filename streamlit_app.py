@@ -1,4 +1,5 @@
 from collections import namedtuple
+from select import select
 import altair as alt
 import math
 import pandas as pd
@@ -73,8 +74,10 @@ if page == "Lark":
                 col1,col2 = st.columns(2)
                 with col1:
                     date_col = st.selectbox("Select Data Column", index=0, options=columns, key="date")
+                    date_col = pd.to_datetime(date_col)
                 with col2:
                     metric_col = st.selectbox("Select Values Column", index=4, options=columns, key="values")
+
                 df = prep_data(df,date_col,metric_col)
                 output = 0
                 fig = px.line(df,
@@ -141,5 +144,15 @@ if page == "Lark":
                                 'K-Neighbors Regression',
                                 'Support Vector Machine'
                                 ]
-                selected_model = st.selectbox(label='Select Country', options=model_list)
+                selected_model = st.selectbox(label='Select model', options=model_list)
+            with st.expander("Parameters:"):
+                st.write('In this section it is possible to modify pamameters of your model.')
+                if selected_model == 'Arima':
+                    p = [1,2,3,4]
+                    d = [1,2,3,4]
+                    q = [1,2,3,4]
+                    p_scale = st.select_slider(label = 'P scale', options = p)
+                    d_scale = st.select_slider(label = 'D scale', options = d)
+                    q_scale = st.select_slider(label = 'Q scale', options = q)
+
         submitted = st.form_submit_button("Submit")
