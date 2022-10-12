@@ -139,3 +139,5 @@ if page == "Lark":
                                 'K-Neighbors Regression',
                                 'Support Vector Machine'
                                 ]
+
+        submitted = st.form_submit_button("Submit")
