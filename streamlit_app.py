@@ -159,10 +159,10 @@ if page == "Lark":
                     yearly_seasonality = [*range(1,365,1)]
                     seasonality_prior_scale = np.arange(0.0,10.0,0.1)
                     changepoint_range = [*range(1,10,1)]
-                    weekly_scale = st.select_slider(label = 'Weekly seasonality scale', option = weekly_seasonality)
-                    yearly_scale = st.select_slider(label = 'Yearly seasonality scale', option = yearly_seasonality)
-                    seasonality_scale = st.select_slider(label = 'Seasonality prior scale', option = seasonality_prior_scale)
-                    changepoint_scale = st.select_slider(label = 'Change point scale', option = changepoint_range)
+                    weekly_scale = st.select_slider(label = 'Weekly seasonality scale', options = weekly_seasonality)
+                    yearly_scale = st.select_slider(label = 'Yearly seasonality scale', options = yearly_seasonality)
+                    seasonality_scale = st.select_slider(label = 'Seasonality prior scale', options = seasonality_prior_scale)
+                    changepoint_scale = st.select_slider(label = 'Change point scale', options = changepoint_range)
 
                 else:
                     st.write('Nothing to show!')
