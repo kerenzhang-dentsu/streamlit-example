@@ -157,7 +157,7 @@ if page == "Lark":
                 elif selected_model =='Prophet':
                     weekly_seasonality = [range(1,52,1)]
                     yearly_seasonality = [range(1,365,1)]
-                    seasonality_prior_scale = [range(0,10,0.1)]
+                    seasonality_prior_scale = np.arange(0.0,10.0,0.1)
                     changepoint_range = [range(1,10,1)]
                     weekly_scale = st.select_slider(label = 'Weekly seasonality scale', option = weekly_seasonality)
                     yearly_scale = st.select_slider(label = 'Yearly seasonality scale', option = yearly_seasonality)
