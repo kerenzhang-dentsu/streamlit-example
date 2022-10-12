@@ -74,7 +74,6 @@ if page == "Lark":
                 col1,col2 = st.columns(2)
                 with col1:
                     date_col = st.selectbox("Select Data Column", index=0, options=columns, key="date")
-                    date_col = pd.to_datetime(date_col)
                 with col2:
                     metric_col = st.selectbox("Select Values Column", index=4, options=columns, key="values")
 
