@@ -145,6 +145,7 @@ if page == "Lark":
                                 ]
                 selected_model = st.selectbox(label='Select model', options=model_list)
             with st.expander("Parameters:"):
+                st.write(selected_model)
                 st.write('In this section it is possible to modify pamameters of your model.')
                 if selected_model == 'Arima':
                     p = [1,2,3,4]
