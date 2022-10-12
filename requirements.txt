@@ -3,5 +3,5 @@ pandas
 streamlit
 plotly
 #pip ==22.2.2
-#RUN pip install git+https://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@github.com/dentsu-Media-US-Data-Science/Lark.git
+-e https://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@github.com/dentsu-Media-US-Data-Science/Lark.git
 
