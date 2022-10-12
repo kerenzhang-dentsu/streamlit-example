@@ -2,6 +2,5 @@ altair
 pandas
 streamlit
 plotly
-git+https://github.com/dentsu-Media-US-Data-Science/Lark.git
+git+https://$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@github.com/dentsu-Media-US-Data-Science/Lark.git
 
-#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@
