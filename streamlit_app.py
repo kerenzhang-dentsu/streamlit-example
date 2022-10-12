@@ -139,5 +139,5 @@ if page == "Lark":
                                 'K-Neighbors Regression',
                                 'Support Vector Machine'
                                 ]
-
+                selected_model = st.selectbox(label='Select Country', options=model_list)
         submitted = st.form_submit_button("Submit")
