@@ -14,7 +14,7 @@ import sys
 def install(package):
     subprocess.check_call([sys.executable, "-m", "pip", "install", package])
 
-install('git+https://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@github.com/dentsu-Media-US-Data-Science/Lark.git')
+install('git+https://github.com/dentsu-Media-US-Data-Science/Lark.git')
 
 
 # Data Config
