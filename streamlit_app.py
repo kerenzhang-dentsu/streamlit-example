@@ -145,7 +145,6 @@ if page == "Lark":
                                 ]
                 selected_model = st.selectbox(label='Select model', options=model_list)
             with st.expander("Parameters:"):
-                st.write(selected_model)
                 st.write('In this section it is possible to modify pamameters of your model.')
                 if selected_model == 'Arima':
                     p = [1,2,3,4]
@@ -154,7 +153,7 @@ if page == "Lark":
                     p_scale = st.select_slider(label = 'P scale', options = p)
                     d_scale = st.select_slider(label = 'D scale', options = d)
                     q_scale = st.select_slider(label = 'Q scale', options = q)
-                elif selected_model =='Prophet':
+                elif selected_model == 'Prophet':
                     weekly_seasonality = [*range(1,52,1)]
                     yearly_seasonality = [*range(1,365,1)]
                     seasonality_prior_scale = np.arange(0.0,10.0,0.1)
@@ -163,8 +162,25 @@ if page == "Lark":
                     yearly_scale = st.select_slider(label = 'Yearly seasonality scale', options = yearly_seasonality)
                     seasonality_scale = st.select_slider(label = 'Seasonality prior scale', options = seasonality_prior_scale)
                     changepoint_scale = st.select_slider(label = 'Change point scale', options = changepoint_range)
-
+                elif selected_model == 'Random Forest':
+                    criterion = ['absolute_error', 'squared_error','poisson']
+                    criterion_selection = st.selectbox(label = 'Criterion selection', options = criterion)
                 else:
-                    st.write('Nothing to show!')
-
+                    st.write('Pamaters have not been built for this model yet, check back later!')
+            with st.expander("Forecast days"):
+                st.write("In this section it is possible to select number of days to forecast.")
+                future = st.number_input(label = 'Enter the number of days to forecast')
         submitted = st.form_submit_button("Submit")
+
+
+#     if submitted:
+#         st.markdown(f"""Model Configuration: \n
+# Horizon: {periods_input} days \n
+# Seasonality: {seasonality} \n
+# Trend Components: {daily};{weekly};{monthly};{yearly} \n
+# Growth: {growth} \n
+# Holidays: {selected_country} \n
+# Hyperparameters: changepoints {changepoint_scale}, seasonality {seasonality_scale}
+# """)
+#         st.success("Configuration Submitted")
+#         st.write(df.head())
