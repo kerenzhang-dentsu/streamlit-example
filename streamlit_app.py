@@ -11,10 +11,10 @@ import plotly.express as px
 import subprocess
 import sys
 #manually install xlrd and lark because dockerfile cannot install them somehow
-def install(package):
-    subprocess.check_call([sys.executable, "-m", "pip", "install", package])
+# def install(package):
+#     subprocess.check_call([sys.executable, "-m", "pip", "install", package])
 
-install('git+https://github.com/dentsu-Media-US-Data-Science/Lark.git')
+# install('git+https://github.com/dentsu-Media-US-Data-Science/Lark.git')
 
 
 # Data Config
