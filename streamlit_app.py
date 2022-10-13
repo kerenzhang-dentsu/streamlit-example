@@ -316,7 +316,7 @@ if page == "Lark":
                     m = ProphetModel(data = train_data_ts, params = params)
                 elif selected_model == 'Linear Regression':
                     params = LinearRegressionParams()
-                    m = LinearRegressionModel(data = )
+                    m = LinearRegressionModel(data = df)
 
 
 
