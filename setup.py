@@ -13,7 +13,7 @@ base_reqs = read_requirements("/Users/kzhang10/Desktop/Github/streamlit-example/
 all_reqs = base_reqs
 
 setup(
-    name="Lark",
+    name="test",
     version="1.0.1",
     description="An awesome adaptable framework to jumpstart your forecasting!",
     url="https://github.com/kerenzhang-dentsu/streamlit-example",
